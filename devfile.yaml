@@ -4,6 +4,9 @@ metadata:
 attributes:
 #   controller.devfile.io/scc: container-build
   controller.devfile.io/storage-type: ephemeral
+  pod-overrides:
+    spec:
+      serviceAccountName: privileged-user
 # projects:
 #   - name: devspaces-gpu
 #     git:
