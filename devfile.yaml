@@ -2,7 +2,7 @@ schemaVersion: 2.2.0
 metadata:
   name: devspaces-gpu
 attributes:
-#   controller.devfile.io/scc: container-build
+  controller.devfile.io/scc: privileged
   controller.devfile.io/storage-type: ephemeral
 #  pod-overrides:
 #    spec:
