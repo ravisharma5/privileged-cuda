@@ -1,34 +1,14 @@
 schemaVersion: 2.2.0
 metadata:
-  name: devspaces-gpu
+  name: empty-cuda
 attributes:
-  controller.devfile.io/scc: privileged
-  controller.devfile.io/storage-type: ephemeral
-#  pod-overrides:
-#    spec:
-#      serviceAccountName: privileged-user
-# projects:
-#   - name: devspaces-gpu
-#     git:
-#       remotes:
-#         origin: "https://github.com/bkoz/devspaces.git"
-#       checkoutFrom:
-#         revision: main
+  controller.devfile.io/devworkspace-config:
+    name: devworkspace-config
+    namespace: openshift-operators
+  controller.devfile.io/scc: container-build
+  controller.devfile.io/storage-type: per-user
 components:
-  - name: test-continer
-    attributes:
-#      pod-overrides:
-#        spec:
-#          serviceAccountName: privileged-user
-#      container-overrides:
-#        securityContext:
-#          runAsUser: 1001
-#          runAsGroup: 1001
-      controller.devfile.io/merge-contribution: true
-    container:
-      # image: ghcr.io/redhat-na-ssa/udi-cuda:11.8.0-cudnn8-devel-ubi8
-      image: ghcr.io/redhat-na-ssa/udi-cuda:latest
-      memoryLimit: 2G
-      cpuLimit: 1000m
-      mountSources: true
+  - container:
+      image: image-registry.openshift-image-registry.svc:5000/admin-devspaces/cuda-custom:latest
       sourceMapping: /projects
+    name: universal-developer-image
