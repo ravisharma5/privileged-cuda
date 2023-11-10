@@ -17,9 +17,9 @@ attributes:
 components:
   - name: test-continer
     attributes:
-      pod-overrides:
-        spec:
-          serviceAccountName: privileged-user
+#      pod-overrides:
+#        spec:
+#          serviceAccountName: privileged-user
 #      container-overrides:
 #        securityContext:
 #          runAsUser: 1001
