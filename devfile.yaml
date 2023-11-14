@@ -1,6 +1,6 @@
 schemaVersion: 2.2.0
 metadata:
-  name: empty-cuda
+  name: privileged-cuda
 attributes:
   controller.devfile.io/devworkspace-config:
     name: devworkspace-config
@@ -11,4 +11,4 @@ components:
   - container:
       image: image-registry.openshift-image-registry.svc:5000/admin-devspaces/latest:latest
       sourceMapping: /projects
-    name: universal-developer-image
+    name: cuda-universal-developer-image
