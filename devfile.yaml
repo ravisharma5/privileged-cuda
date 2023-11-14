@@ -9,6 +9,6 @@ attributes:
   controller.devfile.io/storage-type: per-user
 components:
   - container:
-      image: temp.builder.openshift.io/cuda-image/custom-cuda-6:93967485
+      image: image-registry.openshift-image-registry.svc:5000/cuda-image/cuda-latest:latest
       sourceMapping: /projects
     name: universal-developer-image
