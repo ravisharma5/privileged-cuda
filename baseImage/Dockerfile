@@ -11,12 +11,6 @@ USER 0
 RUN chmod g+rw /etc/shadow && echo "user ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/any
 ###
 
-# ENV https_proxy=http://proxy.ebiz.verizon.com:80 \
-
-#    http_proxy=http://proxy.ebiz.verizon.com:80 \
-
-#    no_proxy=.verizon.com,oneartifactoryci.verizon.com,localhost,metadata.google.internal
-
 RUN dnf -y update && \
 
 #    dnf -y install sudo && \
